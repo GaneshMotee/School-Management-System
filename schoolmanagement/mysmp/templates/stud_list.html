@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head> 
+    <style>
+        body{
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW2KW-EoowjRJxevoZS2Rt2_g7LDzIlBdFeQ&usqp=CAU");
+            background-repeat: no-repeat;
+            background-size: 1550px 1000px; 
+        }
+        .Bita{
+            position:absolute;
+            right:20px;
+            text-decoration: none;
+            color:black;
+        }
+        .Bita:hover{
+            color:white;
+        }
+    </style>
+    
+    <body  ><center>
+        <span>Welcome,{{user.username}}! </span>
+       <a href="{%url 'logout'%}" class="Bita"><h2>logout</a></h2>
+        {% for gpm in gpms %}
+        <table border=1>
+            
+    <p>
+      <th>School Name:{{ gpm.school_name }} <br>
+      School ID :{{ gpm.school_id }} <br>
+      Teacher:  {{ gpm.teachers }} <br>
+      Students:  {{ gpm.students  }} <br>
+      School Address:  {{ gpm.school_address }}<br></th>
+    </table>
+      <a href="{% url 'stud_update' gpm.pk %}">Edit</a>
+      <a
+        href="{% url 'stud_delete' gpm.pk %}"
+        onclick="return confirm('Are you sure you want to delete this task?');"
+        >Delete</a
+    
+        >
+    
+    </p>
+    {% endfor %}
+    
+    <a href="{% url 'stud_create' %}">Create Task</a></br></br>
+    
+</center>       
+    </body>
+</html>

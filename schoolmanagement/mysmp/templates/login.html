@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <style>
+        body{
+             
+            background-image: url("https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bG9naW58ZW58MHx8MHx8&w=1000&q=80");
+            background-repeat: no-repeat;
+            background-size: 1450px 700px;  
+        }
+        button{
+            height:30px;
+            width: 100px;
+            border: 5px solid black;
+        }
+        .gm{
+            height:30px;
+            width: 100px;
+            border: 5px solid black;
+            border-radius:5px;
+            color:white;
+            background-color:red;
+        }
+        button:hover{
+            height:30px;
+            width: 100px;
+            border: 5px solid red;
+            border-radius:5px;
+            color:#fff;
+            background-color:red;
+            opacity: .4;
+            cursor: pointer;
+        }
+        </style>      
+
+    <body><center></br>
+    <b><h1>SCHOOL MANAGEMENT SYSTEM</h1></b>
+        <h2>Login</h2>
+    <form method="post">
+      {% csrf_token %} 
+      <table height="110" border = "3"><th>{{ form.as_table }}</th></table></br></br>
+      <button style="background-color:#FF00FF " type="submit" class="gm">Login</button>
+    </form>
+
+        
+</center>
+<center>
+<a href="{% url  'register' %}" ><b> create new account</b> </a></center>   
+    </body>
+</html>
